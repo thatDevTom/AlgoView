@@ -49,6 +49,12 @@ export default function Home() {
               >
                 Race Mode →
               </Link>
+              <Link
+                href="/pathfinding"
+                className="mt-2 ml-4 inline-block text-sm text-zinc-500 underline dark:text-zinc-400"
+              >
+                Pathfinding
+              </Link>
             </div>
 
             <div className="w-full max-w-2xl text-zinc-900 dark:text-zinc-50">

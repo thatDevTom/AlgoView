@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { AlgorithmGenerator, SortStep } from "@/types/algorithm";
 
 const DEFAULT_SPEED_MS = 300;
 
@@ -7,9 +6,9 @@ const DEFAULT_SPEED_MS = 300;
  * Materializes an algorithm's generator into snapshots and exposes playback
  * controls shared by both the single-algorithm and race views.
  */
-export function useAlgorithmRunner(
-  generator: AlgorithmGenerator,
-  input: number[]
+export function useAlgorithmRunner<TInput, TStep>(
+  generator: (input: TInput) => Generator<TStep>,
+  input: TInput
 ) {
   // Materialize once per algorithm/input change so playback only reads snapshots.
   const steps = useMemo(() => [...generator(input)], [generator, input]);
@@ -84,7 +83,7 @@ export function useAlgorithmRunner(
     };
   }, [isPlaying, speedMs, steps.length]);
 
-  const currentStep: SortStep | undefined = steps[currentStepIndex];
+  const currentStep: TStep | undefined = steps[currentStepIndex];
 
   return {
     steps,

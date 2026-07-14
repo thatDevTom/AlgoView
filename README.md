@@ -16,10 +16,12 @@ Open [http://localhost:3000](http://localhost:3000). Race mode is available at `
 ## Features
 
 - Six visualised sorting algorithms: Bubble, Selection, Insertion, Merge, Quick, and Heap Sort.
+- Interactive pathfinding visualisations for Dijkstra, A*, BFS, and DFS.
 - Animated bar chart with comparison, swap, and sorted-state highlights.
 - Step forward/back, reset, play/pause, and adjustable playback speed.
 - Random or custom array inputs.
 - Race mode with two algorithms running against the identical array.
+- Editable obstacle grid with live frontier, visited-cell, and final-path states.
 
 ## Architecture
 
@@ -58,4 +60,4 @@ types/            Shared algorithm contracts
 
 ## Roadmap
 
-Pathfinding visualisations, including Dijkstra, A*, BFS, and DFS.
+Weighted grids, movable start/goal nodes, and additional pathfinding heuristics.
